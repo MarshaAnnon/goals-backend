@@ -1,18 +1,218 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-Topic.create([{
-    personal_dev: "Read more", "Define your core values", "Attend seminars", "develop a power hour", "find a mentor", "learn continuously", "Develop a positive attitude", "Strengthen communication skills", "write your life purpose", "Discover your inner strength"},
-    {finance: "Learn personal finance 101", "Learn to manage your money", "Develop a budget", "Develop an excellent credit rating", "Track and develop your networth", "invest 10% of your income", "Fins a financial advisor/mentor", "Own/invest in real estate", "Increase your income", "Plan your retirement"},
-    {travel: "Take a staycation", "Travel within your own state", "Visit all 50 states","Attend a major spoting event", "Attend a major cultural event", "Visit one of the 7 wonders", "Go camping/glamping", "Travel the world", "Visit somewhere you've never been", "Travel first-class", },
-    {lifestyle: "Eat better food", "Declutter your life", "Buy less", "buy better quality", "lower carbon-footprint", "Strive for balance", "Maintain ideal body weight", "Develop a long-life mindset", "Complete an endurance event", "Move to a better neighborhood"},
-    {career: "Do a career assessment", "Continue eduaction", "Find or develop your passion", "Be a good employee", "Be a good leader", "Be an expert in something", "Become an authority", "Be your own boss", "Create multiple income sources"},
-    {family_and_friends: "Choose food friends", "Find your life partner", "Weed out the negative people in your life", "Be a good Friend", "Plan family time/adventure", "Learn how to be a good parent", "Be there for your children", "Have regular family meetings", "Establish family traditions", "Plan quality time with friends"},
-    {giving_back: "Donate to local charities", "Volunteer in your community", "Make a difference in the world", "Trace your ancestry", "Become a mentor", "Do something nice for others everyday", "Do something nice for your family", "Help a friend with a problem", "Volunteer at your local school", "Visit the elderly at a local nursing home"},
-    {hobbies_and_passions: "Photography", "Arts and craft", "Gaming", "Cycling", "Music", "Dancing", "Yoga", "Gardening", "Water sports", "Hiking"},
-    {adventure: "Family roadtrip", "Climb a mountain", "Visit a volcano", "Try something new", "Discover somewhere new in your city", "Attend a new cultural event", "Try new ethnic foods", "A yes day", "Do a scavenger hunt", "Train trip across country"
-    }])
+9.times do 
+    User.create(
+        username: Faker::Internet.username,
+        email: Faker::Internet.email,
+        password: "password",
+    )
+end
+
+goals = Goal.create([
+    #personl development id: 1
+    {goal_name: "Read more"}, 
+    {goal_name: "Define your core values"}, 
+    {goal_name: "Attend seminars"}, 
+    {goal_name: "develop a power hour"}, 
+    {goal_name: "find a mentor"}, 
+    {goal_name: "learn continuously"}, 
+    {goal_name: "Develop a positive attitude"}, 
+    {goal_name: "Strengthen communication skills"}, 
+    {goal_name: "write your life purpose"}, 
+    {goal_name: "Discover your inner strength"}, 
+
+    #finance id: 2
+    {goal_name: "Learn personal finance 101"}, 
+    {goal_name: "Learn to manage your money"}, 
+    {goal_name: "Develop a budget"}, 
+    {goal_name: "Develop an excellent credit rating"}, 
+    {goal_name: "Track and develop your networth"}, 
+    {goal_name: "invest 10% of your income"}, 
+    {goal_name: "Find a financial advisor/mentor"}, 
+    {goal_name: "Own/invest in real estate"}, 
+    {goal_name: "Increase your income"}, 
+    {goal_name:"Plan your retirement"}, 
+    
+    #travel id: 3
+    {goal_name: "Take a staycation"}, 
+    {goal_name: "Travel within your own state"}, 
+    {goal_name: "Visit all 50 states"}, 
+    {goal_name: "Attend a major spoting event"}, 
+    {goal_name: "Attend a major cultural event"}, 
+    {goal_name: "Visit one of the 7 wonders"}, 
+    {goal_name: "Go camping/glamping"}, 
+    {goal_name: "Travel the world"}, 
+    {goal_name: "Visit somewhere you've never been"}, 
+    {goal_name: "Travel first-class"}, 
+    
+    #lifestyle id: 4
+    {goal_name: "Eat better food"}, 
+    {goal_name: "Declutter your life"}, 
+    {goal_name: "Buy less"}, 
+    {goal_name: "buy better quality"}, 
+    {goal_name: "lower carbon-footprint"}, 
+    {goal_name: "Strive for balance"}, 
+    {goal_name: "Maintain ideal body weight"}, 
+    {goal_name: "Develop a long-life mindset"}, 
+    {goal_name: "Complete an endurance event"}, 
+    {goal_name: "Move to a better neighborhood"}, 
+
+    #career id: 5
+    {goal_name: "Do a career assessment"}, 
+    {goal_name: "Continue eduaction"},
+    {goal_name: "Find or develop your passion"}, 
+    {goal_name: "Be a good employee"}, 
+    {goal_name: "Be a good leader"}, 
+    {goal_name: "Be an expert in something"}, 
+    {goal_name: "Become an authority"}, 
+    {goal_name: "Be your own boss"}, 
+    {goal_name: "Create multiple income sources"},
+    {goal_name: "Join a professional association"}, 
+
+    #family_and_friends id: 6
+    {goal_name: "Choose food friends"}, 
+    {goal_name: "Find your life partner"}, 
+    {goal_name: "Weed out the negative people in your life"}, {goal_name: "Be a good Friend"}, 
+    {goal_name: "Plan family time/adventure"}, 
+    {goal_name: "Learn how to be a good parent"}, 
+    {goal_name: "Be there for your children"}, 
+    {goal_name: "Have regular family meetings"}, 
+    {goal_name: "Establish family traditions"}, 
+    {goal_name: "Plan quality time with friends"}, 
+
+    #giving_back id: 7
+    {goal_name: "Donate to local charities"}, 
+    {goal_name: "Volunteer in your community"}, 
+    {goal_name: "Make a difference in the world"}, 
+    {goal_name: "Trace your ancestry"}, 
+    {goal_name: "Become a mentor"}, 
+    {goal_name: "Do something nice for others everyday"}, {goal_name: "Do something nice for your family"}, 
+    {goal_name: "Help a friend with a problem"}, 
+    {goal_name: "Volunteer at your local school"}, 
+    {goal_name: "Visit the elderly at a local nursing home"}, 
+    
+    #hobbies_and_passions id: 8
+    {goal_name: "Photography"}, 
+    {goal_name: "Arts and craft"}, 
+    {goal_name: "Gaming"}, 
+    {goal_name: "Cycling"}, 
+    {goal_name: "Music"}, 
+    {goal_name: "Dancing"}, 
+    {goal_name: "Yoga"}, 
+    {goal_name: "Gardening"}, 
+    {goal_name: "Water sports"}, 
+    {goal_name: "Hiking"}, 
+
+    #adventure id: 9
+    {goal_name: "Family roadtrip"}, 
+    {goal_name: "Climb a mountain"}, 
+    {goal_name: "Visit a volcano"}, 
+    {goal_name: "Try something new"}, 
+    {goal_name: "Discover somewhere new in your city"}, {goal_name: "Attend a new cultural event"}, 
+    {goal_name: "Try new ethnic foods"}, 
+    {goal_name: "A yes day"}, 
+    {goal_name: "Do a scavenger hunt"}, 
+    {goal_name: "Train trip across country"} 
+])
+
+
+topics = Topic.create([
+    {name: "Personal Development", goal_id: 1, user_id: 1},
+    {name: "Personal Development", goal_id: 2, user_id: 2},
+    {name: "Personal Development", goal_id: 3, user_id: 3},
+    {name: "Personal Development", goal_id: 4, user_id: 4},
+    {name: "Personal Development", goal_id: 5, user_id: 5},
+    {name: "Personal Development", goal_id: 6, user_id: 6},
+    {name: "Personal Development", goal_id: 7, user_id: 7},
+    {name: "Personal Development", goal_id: 8, user_id: 8},
+    {name: "Personal Development", goal_id: 9, user_id: 9},
+    {name: "Personal Development", goal_id: 10, user_id: 10},
+
+    {name: "Finance", goal_id: 1, user_id: 1}, 
+    {name: "Finance", goal_id: 2, user_id: 2},
+    {name: "Finance", goal_id: 3, user_id: 3},
+    {name: "Finance", goal_id: 4, user_id: 4},
+    {name: "Finance", goal_id: 5, user_id: 5},
+    {name: "Finance", goal_id: 6, user_id: 6},
+    {name: "Finance", goal_id: 7, user_id: 7},
+    {name: "Finance", goal_id: 8, user_id: 8},
+    {name: "Finance", goal_id: 9, user_id: 9},
+    {name: "Finance", goal_id: 10, user_id: 10},
+
+    {name: "Travel", goal_id: 1, user_id: 1},
+    {name: "Travel", goal_id: 2, user_id: 2},
+    {name: "Travel", goal_id: 3, user_id: 3},
+    {name: "Travel", goal_id: 4, user_id: 4},
+    {name: "Travel", goal_id: 5, user_id: 5},
+    {name: "Travel", goal_id: 6, user_id: 6},
+    {name: "Travel", goal_id: 7, user_id: 7},
+    {name: "Travel", goal_id: 8, user_id: 8},
+    {name: "Travel", goal_id: 9, user_id: 9},
+    {name: "Travel", goal_id: 10, user_id: 10},
+
+    {name: "Lifestyle", goal_id: 1, user_id: 1},
+    {name: "Lifestyle", goal_id: 2, user_id: 2},
+    {name: "Lifestyle", goal_id: 3, user_id: 3},
+    {name: "Lifestyle", goal_id: 4, user_id: 4},
+    {name: "Lifestyle", goal_id: 5, user_id: 5},
+    {name: "Lifestyle", goal_id: 6, user_id: 6},
+    {name: "Lifestyle", goal_id: 7, user_id: 7},
+    {name: "Lifestyle", goal_id: 8, user_id: 8},
+    {name: "Lifestyle", goal_id: 9, user_id: 9},
+    {name: "Lifestyle", goal_id: 10, user_id: 10},
+
+    {name: "Career", goal_id: 1, user_id: 1},
+    {name: "Career", goal_id: 2, user_id: 2},
+    {name: "Career", goal_id: 3, user_id: 3},
+    {name: "Career", goal_id: 4, user_id: 4},
+    {name: "Career", goal_id: 5, user_id: 5},
+    {name: "Career", goal_id: 6, user_id: 6},
+    {name: "Career", goal_id: 7, user_id: 7},
+    {name: "Career", goal_id: 8, user_id: 8},
+    {name: "Career", goal_id: 9, user_id: 9},
+    {name: "Career", goal_id: 10, user_id: 10},
+
+    {name: "Friends & Family", goal_id: 1, user_id: 1},
+    {name: "Friends & Family", goal_id: 2, user_id: 2},
+    {name: "Friends & Family", goal_id: 3, user_id: 3},
+    {name: "Friends & Family", goal_id: 4, user_id: 4},
+    {name: "Friends & Family", goal_id: 5, user_id: 5},
+    {name: "Friends & Family", goal_id: 6, user_id: 6},
+    {name: "Friends & Family", goal_id: 7, user_id: 7},
+    {name: "Friends & Family", goal_id: 8, user_id: 8},
+    {name: "Friends & Family", goal_id: 9, user_id: 9},
+    {name: "Friends & Family", goal_id: 10, user_id: 10},
+
+    {name: "Giving Back/Legacy", goal_id: 1, user_id: 1},
+    {name: "Giving Back/Legacy", goal_id: 2, user_id: 2}, 
+    {name: "Giving Back/Legacy", goal_id: 3, user_id: 3},
+    {name: "Giving Back/Legacy", goal_id: 4, user_id: 4},
+    {name: "Giving Back/Legacy", goal_id: 5, user_id: 5},
+    {name: "Giving Back/Legacy", goal_id: 6, user_id: 6},
+    {name: "Giving Back/Legacy", goal_id: 7, user_id: 7},
+    {name: "Giving Back/Legacy", goal_id: 8, user_id: 8},
+    {name: "Giving Back/Legacy", goal_id: 9, user_id: 9},
+    {name: "Giving Back/Legacy", goal_id: 10, user_id: 10},
+
+    {name: "Hobbies & Passions", goal_id: 1, user_id: 1},
+    {name: "Hobbies & Passions", goal_id: 2, user_id: 2},
+    {name: "Hobbies & Passions", goal_id: 3, user_id: 3},
+    {name: "Hobbies & Passions", goal_id: 4, user_id: 4},
+    {name: "Hobbies & Passions", goal_id: 5, user_id: 5},
+    {name: "Hobbies & Passions", goal_id: 6, user_id: 6},
+    {name: "Hobbies & Passions", goal_id: 7, user_id: 7},
+    {name: "Hobbies & Passions", goal_id: 8, user_id: 8},
+    {name: "Hobbies & Passions", goal_id: 9, user_id: 9},
+    {name: "Hobbies & Passions", goal_id: 10, user_id: 10},
+
+    {name: "Adventure", goal_id: 1, user_id: 1},
+    {name: "Adventure", goal_id: 2, user_id: 2},
+    {name: "Adventure", goal_id: 3, user_id: 3},
+    {name: "Adventure", goal_id: 4, user_id: 4},
+    {name: "Adventure", goal_id: 5, user_id: 5},
+    {name: "Adventure", goal_id: 6, user_id: 6},
+    {name: "Adventure", goal_id: 7, user_id: 7},
+    {name: "Adventure", goal_id: 8, user_id: 8},
+    {name: "Adventure", goal_id: 9, user_id: 9},
+    {name: "Adventure", goal_id: 10, user_id: 10}
+])
+
+
