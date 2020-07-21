@@ -14,7 +14,7 @@ ActiveRecord::Schema.define(version: 2020_07_19_223223) do
 
   create_table "goals", force: :cascade do |t|
     t.string "goal_name"
-    t.string "goal_description"
+    t.text "goal_description"
     t.string "goal_timeline"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
