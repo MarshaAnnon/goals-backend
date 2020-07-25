@@ -1,5 +1,8 @@
 # README
 
+This is a work-in-progress, first time working with Axios fetching from the frontend.
+
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
